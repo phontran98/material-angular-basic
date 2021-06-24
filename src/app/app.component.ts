@@ -7,5 +7,23 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'demo-material';
-  notifications = 1 ;
+  
+  percent = 0;
+  showSpinner = false ;
+
+  color = "accent"
+
+  loadData1() {
+    setInterval(() => {
+      this.percent = this.percent + 1;
+    }, 1000);
+  }
+
+  loadData2() {
+    this.showSpinner = true;
+    setTimeout(() => {
+      this.showSpinner = false
+    }, 5000);
+  }
+
 }
